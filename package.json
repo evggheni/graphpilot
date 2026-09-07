@@ -1,0 +1,21 @@
+{
+  "name": "graphpilot",
+  "version": "0.1.0",
+  "description": "GraphPilot — CLI core + MCP stdio server: discover live Subgraphs and reason over The Graph data (discover / pools TVL / swaps; MCP tools search_subgraphs / run_graphql / explain_result). Zero runtime dependencies, Node >= 18 ESM.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "bin": {
+    "graphpilot": "bin/graphpilot.mjs"
+  },
+  "scripts": {
+    "test": "node tests/smoke.mjs && node tests/mcp-smoke.mjs && node tests/keeperhub-smoke.mjs",
+    "test:core": "node tests/smoke.mjs",
+    "test:mcp": "node tests/mcp-smoke.mjs",
+    "test:keeperhub": "node tests/keeperhub-smoke.mjs",
+    "check": "node --check bin/graphpilot.mjs && node --check src/endpoints.mjs && node --check src/config.mjs && node --check src/queries.mjs && node --check src/fixtures.mjs && node --check src/client.mjs && node --check src/keeperhub.mjs && node --check src/format.mjs && node --check mcp/server.mjs && node --check tests/smoke.mjs && node --check tests/mcp-smoke.mjs && node --check tests/keeperhub-smoke.mjs"
+  }
+}

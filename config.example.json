@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy to config.json to use (config.json is gitignored). NO SECRETS HERE: the Studio API key is read ONLY from env GRAPH_STUDIO_KEY — this file deliberately cannot hold it. provider: 'dry-run' forces labeled mock fixtures; empty '' = auto-select live provider. endpoint = keyless Studio deploy URL (endpoint #6 in DAY0-NOTES, works only for your own Studio deployments). deploymentId pins a gateway deployment (endpoint #3) — set it for the demo video to survive schema drift.",
+  "provider": "",
+  "subgraphId": "5zvR82QoaXYFyDEKLZ9t6v9adgnptxYpKpSbxtgVENFV",
+  "deploymentId": "",
+  "endpoint": "",
+  "pageSize": 5,
+  "timeoutMs": 15000
+}
