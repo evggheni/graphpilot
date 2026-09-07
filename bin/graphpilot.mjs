@@ -104,8 +104,8 @@ function keeperhubParams(flags) {
     throw new KeeperHubError({ code: "bad_input", message: "keeperhub-tx needs --to <EVM address 0x + 40 hex>", hint: "EVM chains only for now — Solana paths TODO-VERIFY" });
   }
   const amount = String(flags.amount ?? "").trim();
-  if (!amount || !Number.isFinite(Number(amount)) || Number(amount) <= 0) {
-    throw new KeeperHubError({ code: "bad_input", message: "keeperhub-tx needs --amount <positive decimal, ETH human units>", hint: "token base units/decimals TODO-VERIFY; direct execution day cap 0.02 ETH (EVM)" });
+  if (!amount || !Number.isFinite(Number(amount)) || Number(amount) < 0) {
+    throw new KeeperHubError({ code: "bad_input", message: "keeperhub-tx needs --amount <decimal in ETH human units, 0 allowed for zero-value self-transfer (sponsored chains)>", hint: "token base units/decimals TODO-VERIFY; direct execution day cap 0.02 ETH (EVM)" });
   }
   const tokenAddress = String(flags.token ?? "").trim();
   if (tokenAddress && !/^0x[0-9a-fA-F]{40}$/.test(tokenAddress)) {

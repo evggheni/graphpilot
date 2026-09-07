@@ -125,14 +125,14 @@ Env (secrets env-only, same rule as the Graph providers):
 | Var | Meaning |
 |---|---|
 | `KEEPERHUB_KEY` | org API key `kh_…` (app.keeperhub.com → Settings → Developer → API keys; scope `mcp:write` to broadcast, `mcp:read` = simulate only) |
-| `KEEPERHUB_API` | API base URL; default `https://api.keeperhub.com` — TODO-VERIFY |
+| `KEEPERHUB_API` | API base URL; **verified live 2026-09-07: `https://app.keeperhub.com`** (not api.) |
 | `KEEPERHUB_PROVIDER=dry-run` | labeled offline mock (or `--provider dry-run` on the CLI / `mode:"dry-run"` on the MCP tools) |
 
-No live tx has been executed yet — the whole keeperhub path is TODO-VERIFY until the org key +
+Live cycle verified 2026-09-07: simulate success=true and transfer verified=true on Base Sepolia (sponsored zero-value self-transfer; tx 0x183ed75e...8e58a on sepolia.basescan.org). Historical note: the keeperhub path was TODO-VERIFY until the org key +
 testnet funds exist (owner step). Dry-run, fail-closed and error/poll semantics are covered by
 `tests/keeperhub-smoke.mjs`.
 
-## TODO-VERIFY (until first live run)
+## TODO-VERIFY (post-live-run; resolved items marked)
 
 - [ ] Endpoint #2 response/error shape vs live gateway (implemented from docs; needs Studio API key — owner action, Sep 7 per TECH-PLAN)
 - [ ] Endpoint #6 keyless path never exercised (requires an own Studio deployment URL)
